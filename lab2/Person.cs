@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml.Serialization;
 
 namespace lab2
 {
+    [XmlRoot("Személy")]
     public class Person
     {
-        public AgeChangingDelegate AgeChanging;
+        public event AgeChangingDelegate AgeChanging;
 
         private int age;
+        
+        [XmlAttribute("Kor")]
         public int Age
         {
             get { return age; }
@@ -21,9 +25,11 @@ namespace lab2
                     AgeChanging(age, value);
                 */
                 AgeChanging?.Invoke(age, value);
-                age = value; }
+                age = value;
+            }
         }
 
+        [XmlIgnore]
         public string Name { get; set; }
     }
 }
