@@ -14,6 +14,11 @@ namespace lab2
             Console.WriteLine(oldAge + " => " + newAge);
         }
 
+        static bool MyFilter(int num)
+        {
+            return num % 2 == 0;
+        }
+
         static void Main(string[] args)
         {
             Person p = new Person();
@@ -45,6 +50,10 @@ namespace lab2
             list.Add(1);
             list.Add(2);
             list.Add(3);
+            list.Add(4);
+            //list.Add("öt");
+
+            list = list.FindAll(MyFilter);
 
             for (int i = 0; i < list.Count; i++)
             {
