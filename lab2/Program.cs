@@ -55,11 +55,14 @@ namespace lab2
 
             list = list.FindAll(MyFilter);
 
-            for (int i = 0; i < list.Count; i++)
+            foreach (int num in list)
+                Console.WriteLine($"Value: {num}");
+
+            /*for (int i = 0; i < list.Count; i++)
             {
                 int num = list[i];
                 Console.WriteLine($"Value: {num}");
-            }
+            }*/
         }
     }
 }
