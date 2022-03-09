@@ -19,7 +19,7 @@ namespace lab2
             set
             {
                 if (value < 0)
-                    throw new Exception("AAAAAAAAAAA");
+                    throw new Exception("AAAAAAAAAAAA");
                 /*
                 if (AgeChanging != null)
                     AgeChanging(age, value);
